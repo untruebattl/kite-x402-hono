@@ -54,7 +54,7 @@ export class ResponseCacheStore {
     body: string,
     status: number,
     headers: Record<string, string> = {},
-    ttlSeconds?: number
+    ttlSeconds?: number,
   ): CachedResponseEntry {
     if (this.cache.size >= this.maxEntries) {
       const oldestKey = this.cache.keys().next().value;
@@ -68,7 +68,7 @@ export class ResponseCacheStore {
       status,
       headers: {
         ...headers,
-        "ETag": etag,
+        ETag: etag,
         "Cache-Control": `public, max-age=${Math.floor(ttlMs / 1000)}`,
       },
       etag,

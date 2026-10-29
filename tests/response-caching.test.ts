@@ -1,5 +1,5 @@
 import { describe, it, expect } from "bun:test";
-import { ResponseCacheStore } from "../src/response-caching";
+import { ResponseCacheStore } from "../src/response-caching.js";
 
 describe("ResponseCacheStore", () => {
   const cache = new ResponseCacheStore({ defaultTtlSeconds: 60 });
